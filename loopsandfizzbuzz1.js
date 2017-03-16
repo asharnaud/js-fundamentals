@@ -1,38 +1,37 @@
-/*PART 0 *
+/* PART 0 *
 Write a function that calculates the sum of all the numbers in an array */
 
 function sumOfArray (arr) {
   var sum = 0
-  for(var i = 0; i < arr.length; i++) {
-   sum +=arr[i]
-}
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i]
+  }
   return sum
 }
 
-
-console.assert(sumOfArray([1, 2]) === 3);
-console.assert(sumOfArray([]) === 0);
-console.assert(sumOfArray([1, 2, 3]) === 6);
-console.assert(sumOfArray([10, 9, 8]) === 27);
+console.assert(sumOfArray([1, 2]) === 3)
+console.assert(sumOfArray([]) === 0)
+console.assert(sumOfArray([1, 2, 3]) === 6)
+console.assert(sumOfArray([10, 9, 8]) === 27)
 
 // PART 1
 
 // Write a function maxOfArray() that takes an array of numbers as an argument and finds the highest number.
 function maxOfArray (arr) {
   var max = 0
-  for(var i = 0; i < arr.length; i++) {
+  for (var i = 0; i < arr.length; i++) {
     if (typeof arr[i] !== 'number') {
       return NaN
-  } else if (arr[i] > max) {
-  max = arr[i]
+    } else if (arr[i] > max) {
+      max = arr[i]
+    }
   }
-}
   return max
 }
 
-console.assert(maxOfArray([2,4,3]) === 4)
-console.assert(maxOfArray([10,9,8,100,7,6]) === 100)
-console.assert(isNaN(maxOfArray([1,2,'bucklemyshoe'])))
+console.assert(maxOfArray([2, 4, 3]) === 4)
+console.assert(maxOfArray([10, 9, 8, 100, 7, 6]) === 100)
+console.assert(isNaN(maxOfArray([1, 2, 'bucklemyshoe'])))
 
 /**
 PART 2 *
@@ -45,17 +44,17 @@ function isVowel (letter) {
   }
   for (var i = 0; i < vowels.length; i++) {
     if (letter === vowels[i]) {
-    return true
+      return true
+    }
   }
-}
   return false
 }
 
-console.assert(isVowel(0) === false);
-console.assert(isVowel("B") === false);
-console.assert(isVowel("b") === false);
-console.assert(isVowel("a") === true);
-console.assert(isVowel("E") === true);
+console.assert(isVowel(0) === false)
+console.assert(isVowel('B') === false)
+console.assert(isVowel('b') === false)
+console.assert(isVowel('a') === true)
+console.assert(isVowel('E') === true)
 
 /**
 Part 3 *
@@ -64,15 +63,14 @@ the reversal of a string. For example,
 reverse("skoob") should return the
 string "books". */
 function reverse (str) {
-  var newStr = ""
-  for (var i = str.length-1; i >= 0; i --) {
+  var newStr = ''
+  for (var i = str.length - 1; i >= 0; i--) {
     newStr += str[i]
   }
   return newStr
 }
 
-
-console.assert(reverse("books") === "skoob")
+console.assert(reverse('books') === 'skoob')
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")
 
 /**
@@ -83,27 +81,26 @@ write a function the returns a FizzBuzz string for some number N (counting up fr
 - for every number that is a multiple of 5 (but not 3), return "buzz"
 - for every number that is a multiple of 3 and 5, return "fizzbuzz" */
 function fizzbuzz (num) {
-  var result = ""
-  for (var i = 1; i <= num; i++){
-  if (i % 3 !== 0 && i % 5 !== 0) {
-    result = result + "."
-  } else if (i % 3 === 0 && i % 5 !== 0) {
-    result = result + "fizz"
-  } else if (i % 5 === 0 && i % 3 !== 0) {
-    result = result + "buzz"
-  } else if (i % 3 === 0 && i % 5 === 0) {
-    result = result + "fizzbuzz"
+  var result = ''
+  for (var i = 1; i <= num; i++) {
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      result = result + '.'
+    } else if (i % 3 === 0 && i % 5 !== 0) {
+      result = result + 'fizz'
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      result = result + 'buzz'
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      result = result + 'fizzbuzz'
+    }
   }
-}
   return result
 }
 
-
-console.assert(fizzbuzz(1) === ".")
-console.assert(fizzbuzz(2) === "..")
-console.assert(fizzbuzz(3) === "..fizz")
-console.assert(fizzbuzz(5) === "..fizz.buzz")
-console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
+console.assert(fizzbuzz(1) === '.')
+console.assert(fizzbuzz(2) === '..')
+console.assert(fizzbuzz(3) === '..fizz')
+console.assert(fizzbuzz(5) === '..fizz.buzz')
+console.assert(fizzbuzz(10) === '..fizz.buzzfizz..fizzbuzz')
 
 /**
 Part 5 *
@@ -112,20 +109,17 @@ i.e. findLongestWord("a book full of dogs") should return "book" */
 function findLongestWord (str) {
   str = str.replace('\'', ' ')
   var splitWord = str.split(' ')
-  str.replace('\'', '')
   var longestString = ''
-  for(var i = 0; i < splitWord.length; i++) {
+  for (var i = 0; i < splitWord.length; i++) {
     if (longestString.length < splitWord[i].length) {
-    longestString = splitWord[i]
+      longestString = splitWord[i]
+    }
   }
-}
   return longestString
 }
 
-
-
-console.assert(findLongestWord("a book full of dogs") === "book")
-console.assert(findLongestWord("don't mess with Texas") === "Texas")
+console.assert(findLongestWord('a book full of dogs') === 'book')
+console.assert(findLongestWord("don't mess with Texas") === 'Texas')
 
 /**
 PART 6 *
@@ -140,8 +134,7 @@ function GCD (num1, num2) {
   }
 }
 
-
-console.assert(GCD(5,1) === 1);
-console.assert(GCD(15,3) === 3);
-console.assert(GCD(15,5) === 5);
-console.assert(GCD(50,20) === 10);
+console.assert(GCD(5, 1) === 1)
+console.assert(GCD(15, 3) === 3)
+console.assert(GCD(15, 5) === 5)
+console.assert(GCD(50, 20) === 10)
